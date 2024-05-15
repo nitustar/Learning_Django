@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Template Page</title>
+    <link rel="stylesheet" href="{% static "css/demo.css" %}">
+    <!-- <style>
+        #h11{
+            color:red;
+        }
+        #h12{
+            color: green;
+        }
+    </style> -->
+</head>
+<body>
+    <h1 id="h11">{{insert_msg}}</h1>
+    <h1 id="h12">Current Date and Time : {{insert_date}}</h1>
+    <img src="{% static "images/cat.jpg" %}" alt="cat">
+
+
+</body>
+</html>
