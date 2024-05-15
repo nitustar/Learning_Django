@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="{% static "css/demo.css" %}">
+</head>
+<body>
+    <h1>{{head_msg}}</h1>
+    <ul>
+        <li><h2>{{sub_msg1}}</h2></li>
+        <li><h2>{{sub_msg2}}</h2></li>
+        <li><h2>{{sub_msg3}}</h2></li>
+    </ul>
+
+    <img src="{% static "images/sunny.jpg" %}" alt="sunny">
+    <img src="{% static "images/gudio.jpg" %}" alt="gudio">
+    <img src="{% static "images/divine.png" %}" alt="divine">
+    
+</body>
+</html>

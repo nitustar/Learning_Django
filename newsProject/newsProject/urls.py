@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from newsApp import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("movies/", views.moviesInfo),
+    path("sports/", views.sportsInfo),
+    path("politics/", views.politicsInfo),
+    path("", views.index)
 ]
