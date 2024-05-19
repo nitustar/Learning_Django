@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student_Info</title>
+</head>
+<body>
+    {% if student_list %}
+    <table border = '1' margin="'auto">
+        <thead>
+            <th>Name</th>
+            <th>Marks</th>
+        </thead>
+        {% for student in student_list %}
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.marks}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No records found!</p>
+    {% endif %}
+
+
+    
+</body>
+</html>
