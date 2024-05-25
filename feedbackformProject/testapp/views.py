@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from . import forms
+from .forms import FeedBackForm, SignupForm
 
 # Create your views here.
 
 def feedbackview(request):
     sent = False
     if request.method == 'POST':
-        form = forms.FeedBackForm(request.POST)
+        form = FeedBackForm(request.POST)
         if form.is_valid():
             print("Form Validation Success and Printing Information")
             print("Name: ", form.cleaned_data['name'])
@@ -14,6 +14,16 @@ def feedbackview(request):
             print("Email: ", form.cleaned_data['email'])
             print("FeedBack: ", form.cleaned_data['feedback'])
             sent = True
-    form = forms.FeedBackForm()
-
+    form = FeedBackForm()
     return render(request, "testapp/feedback.html", {'form':form, 'sent':sent})
+
+def signupview(request):
+    form = SignupForm()
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            print("Form Validation Success and Printing Information")
+            print("Name: ", form.cleaned_data['name'])
+            print("Email: ", form.cleaned_data['email'])
+            print("Password: ", form.cleaned_data['password'])
+    return render(request, 'testapp/signup.html', {'form':form})
